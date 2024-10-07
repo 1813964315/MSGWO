@@ -11,7 +11,8 @@ def MSGWO(cec_fun,dim,imax,m):
     for i in range(imax):
         three = np.argsort(pop_fitness)[:3]
         Xalpha, Xbeta, Xdelta = pop[three[0]], pop[three[1]], pop[three[2]]
-        a = np.maximum(0.01,2*np.exp(-0.1*i)*(1+0.3*np.cos(i)))+2*np.exp(-i/imax)
+        a = np.maximum(0.01,2*np.exp(-0.1*i)*(1+0.3*np.cos(i)))
+        # a = np.maximum(0.01,2*np.exp(-0.1*i)*(1+0.3*np.cos(i)))+2*np.exp(-i/imax)
         # a = np.maximum(0.001, np.exp(-0.3 * i / imax) * (1 + 0.3 * np.cos(i * 50 / (1.01 ** i))) + np.random.rand() * dim)
         for j in range(m):
             # 分别计算在适应度值最优的前三个个体的影响下，个体的位置移动量X1、X2、X3
